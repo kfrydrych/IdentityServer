@@ -1,0 +1,6 @@
+﻿What I've done.
+
+- Installed Identity Server 4 from Nuget Gallery
+- To get Quickstart UI I run powershell script in the root of this project
+	iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/IdentityServer/IdentityServer4.Quickstart.UI/master/getmaster.ps1'))
+- Installed microsoft.aspnetcore.mvc and microsoft.aspnetcore.staticFiles from Nuget Gallery
