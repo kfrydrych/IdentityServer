@@ -49,19 +49,31 @@ namespace IdentityServer.Auth
             {
                 new Client
                 {
-                    ClientId = "client",
-
-                    // no interactive user, use the clientid/secret for authentication
-                    AllowedGrantTypes = GrantTypes.ClientCredentials,
-
-                    // secret for authentication
-                    ClientSecrets =
+                    ClientName = "vue js client",
+                    ClientId = "vuejsclient",
+                    RequireClientSecret = false,
+                    AllowedGrantTypes = GrantTypes.Code,
+                    RequirePkce = true,
+                    AllowAccessTokensViaBrowser = true,
+                    RedirectUris = new List<string>
                     {
-                        new Secret("secret".Sha256())
+                        "http://localhost:8081",
+                        "http://localhost:8081/callback.html",
+                        "http://localhost:8081/silent-renew.html"
                     },
-
-                    // scopes that client has access to
-                    AllowedScopes = { "api1" }
+                    PostLogoutRedirectUris = new List<string>
+                    {
+                        "http://localhost:8081"
+                    },
+                    AllowedCorsOrigins = new List<string>
+                    {
+                        "http://localhost:8081"
+                    },
+                    AllowedScopes = new List<string>
+                    {
+                        "openid",
+                        "profile"
+                    }
                 }
             };
         }
