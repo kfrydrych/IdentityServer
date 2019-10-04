@@ -39,7 +39,9 @@ namespace IdentityServer.Auth
         {
             return new List<ApiResource>
             {
-                new ApiResource("api1", "My API")
+                new ApiResource("api-products", "Product Catalog"),
+                new ApiResource("api-inventory", "Current Stock"),
+                new ApiResource("api-search", "Stock Management")
             };
         }
 
@@ -72,7 +74,27 @@ namespace IdentityServer.Auth
                     AllowedScopes = new List<string>
                     {
                         "openid",
-                        "profile"
+                        "profile",
+                        "api-products",
+                        "api-search"
+                    },
+                    // If set to true, adds claims to id_token
+                    // not needed as the client get those claims from user info end point
+                    AlwaysIncludeUserClaimsInIdToken = false,
+                    AlwaysSendClientClaims = false
+                },
+                new Client
+                {
+                    ClientId = "search-api",
+                    ClientSecrets =
+                    {
+                        new Secret("zbieram-pieczarki".Sha256())
+                    },
+                    AllowedGrantTypes = GrantTypes.ClientCredentials,
+                    AllowedScopes =
+                    {
+                        "api-products",
+                        "api-search"
                     }
                 }
             };

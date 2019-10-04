@@ -7,7 +7,7 @@ var mgr = new Oidc.UserManager({
   client_id: 'vuejsclient',
   redirect_uri: window.location.origin + '/callback.html',
   response_type: 'code',
-  scope: 'openid profile',
+  scope: 'openid profile api-products api-search',
   post_logout_redirect_uri: window.location.origin,
   silent_redirect_uri: window.location.origin + '/silent-renew.html',
   accessTokenExpiringNotificationTime: 10,
@@ -83,7 +83,6 @@ export default class SecurityService {
           return resolve(user)
         }
       }).catch(function (err) {
-        console.log(err)
         return reject(err)
       });
     })

@@ -7,6 +7,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServer.Auth", "Iden
 EndProject
 Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "IdentityServer.Client.Vue", "IdentityServer.Client.Vue\IdentityServer.Client.Vue.njsproj", "{AD072BAB-D0B2-4832-8E64-C2E52230D5E9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServer.Api.Products", "IdentityServer.Api.Products\IdentityServer.Api.Products.csproj", "{F888010B-60C9-4478-8D3E-0C1839939625}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServer.Api.Inventory", "IdentityServer.Api.Inventory\IdentityServer.Api.Inventory.csproj", "{8A614727-DA92-46B9-9F3C-2FFED23825D3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServer.Api.Search", "IdentityServer.Api.Search\IdentityServer.Api.Search.csproj", "{1F44B45D-FDC1-47CB-98CB-9900E8D1E363}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +27,18 @@ Global
 		{AD072BAB-D0B2-4832-8E64-C2E52230D5E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AD072BAB-D0B2-4832-8E64-C2E52230D5E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AD072BAB-D0B2-4832-8E64-C2E52230D5E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F888010B-60C9-4478-8D3E-0C1839939625}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F888010B-60C9-4478-8D3E-0C1839939625}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F888010B-60C9-4478-8D3E-0C1839939625}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F888010B-60C9-4478-8D3E-0C1839939625}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A614727-DA92-46B9-9F3C-2FFED23825D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A614727-DA92-46B9-9F3C-2FFED23825D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A614727-DA92-46B9-9F3C-2FFED23825D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A614727-DA92-46B9-9F3C-2FFED23825D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F44B45D-FDC1-47CB-98CB-9900E8D1E363}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F44B45D-FDC1-47CB-98CB-9900E8D1E363}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F44B45D-FDC1-47CB-98CB-9900E8D1E363}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F44B45D-FDC1-47CB-98CB-9900E8D1E363}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
