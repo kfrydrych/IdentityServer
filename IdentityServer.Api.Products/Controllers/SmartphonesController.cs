@@ -1,6 +1,8 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using IdentityServer.Shared;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using System.Threading;
 
 namespace IdentityServer.Api.Products.Controllers
 {
@@ -10,16 +12,18 @@ namespace IdentityServer.Api.Products.Controllers
     public class SmartphonesController : ControllerBase
     {
         [HttpGet]
-        public ActionResult<IEnumerable<dynamic>> Get()
+        public ActionResult<IEnumerable<Product>> Get()
         {
-            return new List<dynamic>()
+            Thread.Sleep(2000);
+
+            return new List<Product>
             {
-                new
+                new Product
                 {
                     Id = 1,
                     Name = "IPhone XI Pro"
                 },
-                new
+                new Product
                 {
                     Id = 2,
                     Name = "Samsung Galaxy S10"

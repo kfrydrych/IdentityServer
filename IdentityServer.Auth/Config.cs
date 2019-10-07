@@ -94,7 +94,7 @@ namespace IdentityServer.Auth
                     AllowedScopes =
                     {
                         "api-products",
-                        "api-search"
+                        "api-inventory"
                     }
                 }
             };

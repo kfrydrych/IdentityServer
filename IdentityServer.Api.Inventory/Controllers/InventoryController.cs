@@ -1,6 +1,8 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using IdentityServer.Shared;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using System.Threading;
 
 namespace IdentityServer.Api.Inventory.Controllers
 {
@@ -11,19 +13,21 @@ namespace IdentityServer.Api.Inventory.Controllers
     {
 
         [HttpGet]
-        public ActionResult<IEnumerable<dynamic>> Get()
+        public ActionResult<IEnumerable<Stock>> Get()
         {
-            return new List<dynamic>()
+            Thread.Sleep(2000);
+
+            return new List<Stock>
             {
-                new
+                new Stock
                 {
-                    Id = 1,
-                    Qty = 23
+                    ProductId = 1,
+                    Quantity = 23
                 },
-                new
+                new Stock
                 {
-                    Id = 2,
-                    Qty = 13
+                    ProductId = 2,
+                    Quantity = 13
                 }
 
             };
