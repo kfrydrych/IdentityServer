@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using IdentityServer.Auth.Services;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -15,6 +16,7 @@ namespace IdentityServer.Auth
             services.AddIdentityServer()
                 .AddDeveloperSigningCredential() // This should be removed for real certificate in production
                 .AddTestUsers(Config.GetUsers())
+                .AddExtensionGrantValidator<ExtensionGrantValidator>()
                 .AddInMemoryIdentityResources(Config.GetIdentityResources())
                 .AddInMemoryApiResources(Config.GetApis())
                 .AddInMemoryClients(Config.GetClients());

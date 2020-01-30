@@ -19,7 +19,9 @@ namespace IdentityServer.Auth
                     Claims = new List<Claim>
                     {
                         new Claim("given_name", "Krzysztof"),
-                        new Claim("family_name", "Frydrych")
+                        new Claim("family_name", "Frydrych"),
+                        new Claim("department", "IT"),
+                        new Claim("manager_name", "John Smith")
                     }
                 }
             };
@@ -31,7 +33,15 @@ namespace IdentityServer.Auth
             return new IdentityResource[] // available scopes
             {
                 new IdentityResources.OpenId(), // Return subjectId claim
-                new IdentityResources.Profile() // Profile claims (given_name, family_name)
+                new IdentityResources.Profile(), // Profile claims (given_name, family_name)
+                new IdentityResource
+                {
+                    Name = "company-info",
+                    DisplayName = "Company Info",
+                    Description = "Information about the company",
+                    Required = true,
+                    UserClaims = { "department", "manager_name" }
+                },
             };
         }
 
@@ -75,6 +85,7 @@ namespace IdentityServer.Auth
                     {
                         "openid",
                         "profile",
+                        "company-info",
                         "api-products",
                         "api-search"
                     },
@@ -82,6 +93,7 @@ namespace IdentityServer.Auth
                     // not needed as the client get those claims from user info end point
                     AlwaysIncludeUserClaimsInIdToken = false,
                     AlwaysSendClientClaims = false
+
                 },
                 new Client
                 {

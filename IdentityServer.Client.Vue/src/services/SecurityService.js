@@ -7,7 +7,7 @@ var mgr = new Oidc.UserManager({
   client_id: 'vuejsclient',
   redirect_uri: window.location.origin + '/callback.html',
   response_type: 'code',
-  scope: 'openid profile api-products api-search',
+  scope: 'openid profile company-info api-products api-search',
   post_logout_redirect_uri: window.location.origin,
   silent_redirect_uri: window.location.origin + '/silent-renew.html',
   accessTokenExpiringNotificationTime: 10,

@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
-using System.Threading;
 
 namespace IdentityServer.Api.Products.Controllers
 {
@@ -14,7 +13,7 @@ namespace IdentityServer.Api.Products.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<Product>> Get()
         {
-            Thread.Sleep(2000);
+            var user = User; // No subjectId
 
             return new List<Product>
             {
